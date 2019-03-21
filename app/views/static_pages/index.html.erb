@@ -1,0 +1,16 @@
+<div class="Main_container">
+  <div class="Form_container">
+    <%= form_for :search, method: :get do |f| %>
+      <h3>
+        <%= f.label :flickr_user_id, "Flickr user ID" %>
+        <%= f.text_field :flickr_user_id %>
+      </h3>
+      <%= f.submit "SEARCH" %>
+    <% end %>
+  </div>
+  <% @pics.each do |pic| %>
+    <div class="Pic_container">
+      <%= image_tag(pic.url_m) %> 
+    </div>
+  <% end %>
+</div>
